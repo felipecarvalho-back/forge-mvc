@@ -14,7 +14,7 @@ class Logger
 
         // Tenta criar o diretório caso ele não exista no clone do projeto
         if (!is_dir($this->logPath)) {
-            mkdir($this->logPath, 0777, true);
+            mkdir($this->logPath, 0755, true);
         }
 
         $this->logPath .= $filename;
