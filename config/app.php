@@ -31,7 +31,7 @@ return [
     'app' => [
         'name' => 'MVC Base Project',
         // Rota padrão do redirecionamento raiz, caso configurado
-        'default_route' => function_exists('env') ? env('APP_DEFAULT_ROUTE', '/') : '/',
+        'default_route' => env('APP_DEFAULT_ROUTE', '/'),
     ],
 
     /*

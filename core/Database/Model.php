@@ -59,6 +59,15 @@ abstract class Model implements \JsonSerializable
     public bool $relationDefinitionMode = false;
 
     /**
+     * Lista de propriedades internas do framework que devem ser excluídas
+     * em serialização (toArray, save, etc.). Centralizada aqui para evitar duplicação.
+     */
+    private const INTERNAL_PROPERTIES = [
+        'db', 'table', 'primaryKey', 'fillable', 'hidden', 'appends',
+        'timestamps', 'softDeletes', 'loadedRelations', 'relationDefinitionMode', 'broadcastCache'
+    ];
+
+    /**
      * Métodos Mágicos para getters dinâmicos
      * 
      * @param string $name
@@ -235,7 +244,7 @@ abstract class Model implements \JsonSerializable
             $cleanKey = preg_replace('/^[^\0]+\0/', '', $cleanKey) ?: $cleanKey;
 
             // Pula propriedades do framework
-            if (in_array($cleanKey, ['db', 'table', 'primaryKey', 'fillable', 'hidden', 'appends', 'timestamps', 'softDeletes', 'loadedRelations', 'relationDefinitionMode', 'broadcastCache'], true)) {
+            if (in_array($cleanKey, self::INTERNAL_PROPERTIES, true)) {
                 continue;
             }
             $data[$cleanKey] = $value;
@@ -666,7 +675,7 @@ abstract class Model implements \JsonSerializable
             $cleanKey = preg_replace('/^[^\0]+\0/', '', $cleanKey) ?: $cleanKey;
 
             // Remove propriedades internas do framework
-            if (in_array($cleanKey, ['db', 'table', 'primaryKey', 'fillable', 'hidden', 'appends', 'timestamps', 'softDeletes', 'loadedRelations', 'relationDefinitionMode', 'broadcastCache'], true)) {
+            if (in_array($cleanKey, self::INTERNAL_PROPERTIES, true)) {
                 continue;
             }
 

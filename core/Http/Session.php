@@ -77,9 +77,11 @@ class Session
                 session_start();
             }
             
-            // Log para debug de consistência em modo Worker
-            $currentId = session_id();
-            logger()->debug("Sessão Iniciada [ID: {$currentId}] Driver: {$driver}");
+            // Log para debug de consistência em modo Worker (apenas em desenvolvimento)
+            if (env('APP_DEBUG', false)) {
+                $currentId = session_id();
+                logger()->debug("Sessão Iniciada [ID: {$currentId}] Driver: {$driver}");
+            }
         }
     }
 
