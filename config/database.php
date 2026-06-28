@@ -14,7 +14,7 @@ return [
      | lib dotenv não foi carregada, usaremos o 'mysql'.
      |
      */
-    'default' => getenv('DB_CONNECTION') ?: 'mysql',
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
      |--------------------------------------------------------------------------
@@ -26,29 +26,29 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => getenv('DB_HOST') ?: '127.0.0.1',
-            'port' => getenv('DB_PORT') ?: '3306',
-            'database' => getenv('DB_DATABASE') ?: 'mvc_base',
-            'username' => getenv('DB_USERNAME') ?: 'root',
-            'password' => getenv('DB_PASSWORD') ?: '',
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '3306'),
+            'database' => env('DB_DATABASE', 'mvc_base'),
+            'username' => env('DB_USERNAME', 'root'),
+            'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8mb4',
         ],
 
         'pgsql' => [
             'driver'   => 'pgsql',
-            'host'     => getenv('DB_HOST') ?: '127.0.0.1',
-            'port'     => getenv('DB_PORT') ?: '5432',
-            'database' => getenv('DB_DATABASE') ?: 'mvc_base',
-            'username' => getenv('DB_USERNAME') ?: 'postgres',
-            'password' => getenv('DB_PASSWORD') ?: '',
+            'host'     => env('DB_HOST', '127.0.0.1'),
+            'port'     => env('DB_PORT', '5432'),
+            'database' => env('DB_DATABASE', 'mvc_base'),
+            'username' => env('DB_USERNAME', 'postgres'),
+            'password' => env('DB_PASSWORD', ''),
             'charset'  => 'utf8',
         ],
 
         'sqlite' => [
             'driver'   => 'sqlite',
             // Use ':memory:' para testes em memória, ou um caminho relativo à raiz do projeto
-            // Ex: 'database' => getenv('DB_DATABASE') ?: 'database/database.sqlite'
-            'database' => getenv('DB_DATABASE') ?: 'database/database.sqlite',
+            // Ex: 'database' => env('DB_DATABASE', 'database/database.sqlite')
+            'database' => env('DB_DATABASE', 'database/database.sqlite'),
         ],
 
     ],

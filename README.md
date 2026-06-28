@@ -2,7 +2,7 @@
 
 > Micro-framework PHP puro, construído do zero, focado em performance, segurança e arquitetura moderna. Ideal para aprender como um framework funciona por dentro ou como base para aplicações reais.
 
-[![PHP](https://img.shields.io/badge/PHP-8.1%2B-8892BF?logo=php)](https://php.net)
+[![PHP](https://img.shields.io/badge/PHP-8.5%2B-8892BF?logo=php)](https://php.net)
 [![License](https://img.shields.io/badge/Licença-MIT-green)](LICENSE)
 [![FrankenPHP](https://img.shields.io/badge/FrankenPHP-Worker%20Mode-orange)](https://frankenphp.dev)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker)](https://docker.com)
@@ -240,7 +240,7 @@ Consulte a pasta `docs/` para guias detalhados:
 
 ## Requisitos
 
-- PHP **8.1+** (recomendado 8.3+)
+- PHP **8.5+**
 - Extensões: `pdo`, `pdo_mysql` (ou `pdo_pgsql` / `pdo_sqlite`), `mbstring`, `openssl`
 - Composer 2.x
 

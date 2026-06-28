@@ -88,7 +88,7 @@ class Request
         if (str_contains($contentType, 'application/json')) {
             $json = json_decode($this->content, true);
             if (is_array($json)) {
-                return $json;
+                return array_merge($this->query, $json, $this->files);
             }
         }
         return array_merge($this->query, $this->post, $this->files);
