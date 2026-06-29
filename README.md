@@ -47,7 +47,7 @@ A maioria dos tutoriais de PHP ensina a usar o Laravel e esconde toda a mágica 
 ### Método 1: Via Composer (Recomendado)
 
 ```bash
-composer create-project felipe-code/mvc-base nome-do-seu-projeto
+composer create-project felipecarvalho-back/forge-mvc nome-do-seu-projeto
 ```
 
 O instalador interativo irá configurar o `.env` e preparar o projeto automaticamente.
